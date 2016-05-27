@@ -23,7 +23,7 @@ function date_code($atts)
 	$color = $a['color'];
 	$bgcolor = $a['bgcolor'];
 
-	return '&copy Copyright - <span style="color: ' . $color . '; background: ' . $bgcolor . '">' . date('Y');
+	return '&copy; Copyright - <span style="color: ' . $color . '; background: ' . $bgcolor . '">' . date('Y');
 }
 
 add_shortcode('gen','gen_add');
