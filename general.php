@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Shortcodes Date | General Address
-Description: Shortcode for date - [date] with attributes [date color="red" bgcolor="black"]. Address [gen] with attributes [gen color="red" bgcolor="black" linkcolor="orange" linkbg="black" link="http://kevinpichette.com" name="Kevin"] 
+Description: Shortcode for date - [year] with attributes [year color="red" bgcolor="black"]. Address [gen] with attributes [gen color="red" bgcolor="black" linkcolor="orange" linkbg="black" link="http://kevinpichette.com" name="Kevin"] 
 Version: 2016.5.25.1
 Author: Kevin Pichette
 Author URI: http://www.kevinpichette.com
@@ -11,7 +11,7 @@ Copyright: Kevin Pichettte
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
 
-add_shortcode('date','date_code');
+add_shortcode('year','date_code');
 
 function date_code($atts)
 {
@@ -23,7 +23,7 @@ function date_code($atts)
 	$color = $a['color'];
 	$bgcolor = $a['bgcolor'];
 
-	return '<span style="color: ' . $color . '; background: ' . $bgcolor . '">' . date('Y');
+	return '&copy Copyright - <span style="color: ' . $color . '; background: ' . $bgcolor . '">' . date('Y');
 }
 
 add_shortcode('gen','gen_add');
