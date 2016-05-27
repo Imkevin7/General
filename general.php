@@ -35,8 +35,8 @@ function gen_add($atts)
 			'bgcolor' => '#ffffff',
 			'linkcolor' => '#000000',
 			'linkbg' => '#ffffff',
-			'link' => '',
-			'name' => '',
+			'link' => 'http://kevinpichette.com',
+			'name' => 'Kevin',
 		),$atts);
 
 	$color = $a['color'];
