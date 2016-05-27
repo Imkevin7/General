@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Shortcodes Date | General Address
-Description: Shortcode for date - [date] with attributes [date color="red" bgcolor="black"]. Address [wdw] with attributes [wdw color="red" bgcolor="black" linkcolor="orange" linkbg="black"] 
+Description: Shortcode for date - [date] with attributes [date color="red" bgcolor="black"]. Address [gen] with attributes [gen color="red" bgcolor="black" linkcolor="orange" linkbg="black" link="http://kevinpichette.com" name="Kevin"] 
 Version: 2016.5.25.1
 Author: Kevin Pichette
 Author URI: http://www.kevinpichette.com
@@ -26,21 +26,25 @@ function date_code($atts)
 	return '<span style="color: ' . $color . '; background: ' . $bgcolor . '">' . date('Y');
 }
 
-add_shortcode('wdw','wdw_add');
+add_shortcode('gen','gen_add');
 
-function wdw_add($atts)
+function gen_add($atts)
 {
 	$a = shortcode_atts(array(
 			'color' => '#000000',
 			'bgcolor' => '#ffffff',
 			'linkcolor' => '#000000',
 			'linkbg' => '#ffffff',
+			'link' => '',
+			'name' => '',
 		),$atts);
 
 	$color = $a['color'];
 	$bgcolor = $a['bgcolor'];
 	$linkcolor = $a['linkcolor'];
 	$linkbg = $a['linkbg'];
+	$link = $a['link'];
+	$name = $a['name'];
 
-	return " <span style='color:" . $color . "; background: " . $bgcolor . ";'>| Created by <a style='color: " . $linkcolor . "; background: " . $linkbg . ";' href='http://welldressedwalrus.com' target='_blank'>Well Dressed Walrus</a>.</span>";
+	return " <span style='color:" . $color . "; background: " . $bgcolor . ";'>| Created by <a style='color: " . $linkcolor . "; background: " . $linkbg . ";' href='" . $link . "' target='_blank'>" . $name . "</a>.</span>";
 }
